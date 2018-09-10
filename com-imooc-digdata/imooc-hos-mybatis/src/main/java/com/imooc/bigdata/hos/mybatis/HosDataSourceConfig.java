@@ -1,6 +1,8 @@
 package com.imooc.bigdata.hos.mybatis;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -40,7 +42,7 @@ public class HosDataSourceConfig {
         Properties dsProperties = new Properties();
         for(Object key:keys){
             if(key.toString().startsWith("datasource")){
-                dsProperties.put(key.toString().replace("datasource.",""),properties.get(key))
+                dsProperties.put(key.toString().replace("datasource.",""),properties.get(key));
             }
         }
         //2.by HiKariDatasourcefactory generate a new datasource
@@ -50,8 +52,20 @@ public class HosDataSourceConfig {
         return factory.getDataSource();
     }
 
+    @Bean(name = "HosSqlSessionFactory")
+    @Primary
     public SqlSessionFactory hosSqlSessionFactory(
-            @Qualifier("HosDataSource") DataSource hosDataSource){
+            @Qualifier("HosDataSource") DataSource hosDataSource) throws Exception{
 
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(hosDataSource);
+
+        //1.read properties of mybatis
+        ResourceLoader loader = new DefaultResourceLoader();
+        sqlSessionFactoryBean.setConfigLocation(loader.getResource("classpath:mybatis-config.xml"));
+
+        //2.get sqlsessionfactory
+        sqlSessionFactoryBean.setSqlSessionFactoryBuilder(new SqlSessionFactoryBuilder());
+        return sqlSessionFactoryBean.getObject();
     }
 }
