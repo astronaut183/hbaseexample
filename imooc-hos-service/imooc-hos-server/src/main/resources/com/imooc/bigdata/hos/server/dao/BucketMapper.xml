@@ -31,7 +31,7 @@
     delete from HOS_BUCKET where BUCKET_NAME=#{bucketName}
   </delete>
 
-  <select id="getBucket" resultMap="BucketResultMap">
+  <select id="getBucketById" resultMap="BucketResultMap">
     select * from HOS_BUCKET where
     BUCKET_ID=#{bucketId}
   </select>

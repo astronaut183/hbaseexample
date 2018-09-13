@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/hbase-example/hbase-api-test/src/main/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/hbase-api-test/src/test/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/hbase-endpoint-test/src/main/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/hbase-endpoint-test/src/test/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/hbase-monitor/src/main/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/hbase-observer-test/src/main/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/phoenix-mybatis/src/main/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/phoenix-mybatis/src/test/java" />
+      <root url="file://$PROJECT_DIR$/hbase-example/phoenix-test/src/main/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-common/src/main/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-mybatis/src/main/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-mybatis/src/test/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-sdk/src/main/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-server/src/main/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-server/src/test/java" />
+      <root url="file://$PROJECT_DIR$/imooc-hos-web/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

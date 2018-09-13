@@ -19,7 +19,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.13.0" level="project" />
-    <orderEntry type="library" name="Maven: com.imooc.bigdata:imooc-hos-common:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="imooc-hos-common" />
     <orderEntry type="module" module-name="imooc-hos-core" />
     <orderEntry type="module" module-name="imooc-hos-mybatis" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.6.0" level="project" />

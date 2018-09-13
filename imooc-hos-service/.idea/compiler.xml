@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="imooc-hos-common" />
+        <module name="imooc-hos-core" />
+        <module name="imooc-hos-mybatis" />
+        <module name="imooc-hos-sdk" />
+        <module name="imooc-hos-server" />
+        <module name="imooc-hos-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="imooc-hos" target="1.8" />
+      <module name="imooc-hos-common" target="1.8" />
+      <module name="imooc-hos-core" target="1.8" />
+      <module name="imooc-hos-mybatis" target="1.8" />
+      <module name="imooc-hos-sdk" target="1.8" />
+      <module name="imooc-hos-server" target="1.8" />
+      <module name="imooc-hos-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

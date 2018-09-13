@@ -29,7 +29,7 @@
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:16.0" level="project" />
     <orderEntry type="module" module-name="imooc-hos-server" />
-    <orderEntry type="library" name="Maven: com.imooc.bigdata:imooc-hos-common:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="imooc-hos-common" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.11.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.6" level="project" />

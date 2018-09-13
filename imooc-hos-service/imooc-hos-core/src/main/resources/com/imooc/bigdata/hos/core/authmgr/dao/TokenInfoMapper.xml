@@ -7,7 +7,7 @@
     <id column="TOKEN" property="token"/>
     <result column="EXPIRE_TIME" property="expireTime"/>
     <result column="REFRESH_TIME" property="refreshTime"/>
-    <result column="ACTIVE" property="active"/>
+    <result column="ACTIVE" property="isActive"/>
     <result column="CREATOR" property="creator"/>
     <result column="CREATE_TIME" property="createTime"/>
   </resultMap>
@@ -16,7 +16,7 @@
     (TOKEN,EXPIRE_TIME,REFRESH_TIME,ACTIVE,CREATOR,CREATE_TIME)
     values
     (#{token.token},#{token.expireTime},#{token.refreshTime}
-    ,#{token.active},#{token.creator},#{token.createTime})
+    ,#{token.isActive},#{token.creator},#{token.createTime})
   </insert>
 
   <update id="updateToken">
@@ -37,7 +37,7 @@
     select * from TOKEN_INFO where TOKEN=#{token}
   </select>
 
-  <select id="getTokenInfoList" resultMap="TokenInfoResultMap">
+  <select id="getTokenInfos" resultMap="TokenInfoResultMap">
     select * from TOKEN_INFO where
     CREATOR=#{creator}
   </select>

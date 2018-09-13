@@ -33,6 +33,7 @@
     <module>imooc-hos-server</module>
     <module>imooc-hos-sdk</module>
     <module>imooc-hos-web</module>
+    <module>imooc-hos-common</module>
   </modules>
   <build>
     <plugins>

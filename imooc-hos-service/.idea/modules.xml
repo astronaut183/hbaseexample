@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos.iml" filepath="$PROJECT_DIR$/imooc-hos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos-common/imooc-hos-common.iml" filepath="$PROJECT_DIR$/imooc-hos-common/imooc-hos-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos-core/imooc-hos-core.iml" filepath="$PROJECT_DIR$/imooc-hos-core/imooc-hos-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos-mybatis/imooc-hos-mybatis.iml" filepath="$PROJECT_DIR$/imooc-hos-mybatis/imooc-hos-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos-sdk/imooc-hos-sdk.iml" filepath="$PROJECT_DIR$/imooc-hos-sdk/imooc-hos-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos-server/imooc-hos-server.iml" filepath="$PROJECT_DIR$/imooc-hos-server/imooc-hos-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imooc-hos-web/imooc-hos-web.iml" filepath="$PROJECT_DIR$/imooc-hos-web/imooc-hos-web.iml" />
+    </modules>
+  </component>
+</project>
