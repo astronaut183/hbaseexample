@@ -43,8 +43,9 @@ public class HBaseServiceImpl {
         }
         return true;
     }
+
     //3 delete cf
-    public static boolean deleteColumnFamily(Connection connection, String tableName, String cf){
+    public static boolean deleteColumnFamily(Connection connection, String tableName, String cf) {
         try (HBaseAdmin admin = (HBaseAdmin) connection.getAdmin()) {
             admin.deleteColumn(tableName, cf);
         } catch (Exception e) {
@@ -53,52 +54,55 @@ public class HBaseServiceImpl {
         }
         return true;
     }
+
     //4 delete cal
     public static boolean deleteColumnQualifier(Connection connection, String tableName,
-                                                String rowKey, String cf, String column){
+                                                String rowKey, String cf, String column) {
         Delete delete = new Delete(rowKey.getBytes());
-        delete.addColumn(cf.getBytes(),column.getBytes());
+        delete.addColumn(cf.getBytes(), column.getBytes());
         return deleteRow(connection, tableName, delete);
     }
 
-    public static boolean deleteRow(Connection connection, String tableName, Delete delete){
-        try(Table table = connection.getTable(TableName.valueOf(tableName))){
+    public static boolean deleteRow(Connection connection, String tableName, Delete delete) {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             table.delete(delete);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new HosServerException(ErrorCodes.ERROR_HBASE, "delete qualifier error");
         }
         return true;
     }
+
     //5 delete row
-    public static boolean deleteRow(Connection connection, String tableName, String rowKey){
+    public static boolean deleteRow(Connection connection, String tableName, String rowKey) {
         Delete delete = new Delete(rowKey.getBytes());
         return deleteRow(connection, tableName, delete);
     }
+
     //6 read row
-    public static Result getRow(Connection connection, String tableName, Get get){
-        try(Table table = connection.getTable(TableName.valueOf(tableName))){
+    public static Result getRow(Connection connection, String tableName, Get get) {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             return table.get(get);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new HosServerException(ErrorCodes.ERROR_HBASE, "delete get error");
         }
     }
 
-    public static Result getRow(Connection connection, String tableName, String rowKey){
+    public static Result getRow(Connection connection, String tableName, String rowKey) {
         Get get = new Get(rowKey.getBytes());
         return getRow(connection, tableName, get);
     }
     //7 get scanner
 
-    public static ResultScanner getScanner(Connection connection, String tableName, Scan scan){
-        try(Table table = connection.getTable(TableName.valueOf(tableName))){
+    public static ResultScanner getScanner(Connection connection, String tableName, Scan scan) {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             return table.getScanner(scan);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new HosServerException(ErrorCodes.ERROR_HBASE, "delete scanner error");
         }
     }
 
     public static ResultScanner getScanner(Connection connection, String tableName,
-                                           String startKey, String endKey, FilterList filterList){
+                                           String startKey, String endKey, FilterList filterList) {
         Scan scan = new Scan();
         scan.setStartRow(startKey.getBytes());
         scan.setStopRow(endKey.getBytes());
@@ -107,19 +111,20 @@ public class HBaseServiceImpl {
     }
     //8 insert row
 
-    public static boolean putRow(Connection connection, String tableName, Put put){
-        try(Table table = connection.getTable(TableName.valueOf(tableName))){
+    public static boolean putRow(Connection connection, String tableName, Put put) {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             table.put(put);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new HosServerException(ErrorCodes.ERROR_HBASE, "put row error");
         }
         return true;
     }
+
     //9 insert rows
-    public static boolean putRow(Connection connection, String tableName, List<Put> puts){
-        try(Table table = connection.getTable(TableName.valueOf(tableName))){
+    public static boolean putRow(Connection connection, String tableName, List<Put> puts) {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
             table.put(puts);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new HosServerException(ErrorCodes.ERROR_HBASE, "put row error");
         }
         return true;
@@ -128,10 +133,10 @@ public class HBaseServiceImpl {
     //10 incrementColumnValue    create seqId
 
     public static long incrementColumnValue(Connection connection, String tableName,
-                                            String row, String cf, String qual, int num){
-        try(Table table = connection.getTable(TableName.valueOf(tableName))){
-            return table.incrementColumnValue(row.getBytes(), cf.getBytes(), qual.getBytes(), num);
-        }catch(Exception e){
+                                            String row, byte[] cf, byte[] qual, int num) {
+        try (Table table = connection.getTable(TableName.valueOf(tableName))) {
+            return table.incrementColumnValue(row.getBytes(), cf, qual, num);
+        } catch (Exception e) {
             throw new HosServerException(ErrorCodes.ERROR_HBASE, "create seqId error");
         }
     }
